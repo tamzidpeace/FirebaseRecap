@@ -34,11 +34,12 @@ public class MainActivity extends AppCompatActivity {
         TextView text = findViewById(R.id.textView);
         Button saveBtn = findViewById(R.id.button);
         Button readBtn = findViewById(R.id.button2);
+        Button deleteBtn = findViewById(R.id.button3);
         editText = findViewById(R.id.editText);
 
         myRef = FirebaseDatabase.getInstance().getReference();
 
-        // inserting data
+        // inserting data + update trick
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
                 //myRef.child("message").push().child("no").setValue(mText);
                 number = ++number;
                 myRef.child("abc").child(String.valueOf(number)).setValue(mText);
+                //update trick
+                myRef.child("abc").child("2").setValue("arafat");
             }
         });
 
@@ -66,6 +69,14 @@ public class MainActivity extends AppCompatActivity {
                         Log.d(TAG, "onCancelled: " + databaseError.toException());
                     }
                 });
+            }
+        });
+
+        // delete data
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myRef.child("abc").child("no").removeValue();
             }
         });
     }

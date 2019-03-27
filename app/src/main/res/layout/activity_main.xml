@@ -38,7 +38,7 @@
         android:layout_marginTop="174dp"
         android:layout_marginEnd="6dp"
         android:layout_marginRight="6dp"
-        android:text="Button"
+        android:text="save_update"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -52,9 +52,24 @@
         android:layout_marginTop="58dp"
         android:layout_marginEnd="6dp"
         android:layout_marginRight="6dp"
-        android:text="Button"
+        android:text="read"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
 
 </android.support.constraint.ConstraintLayout>
